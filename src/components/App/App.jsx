@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from 'routes/Home';
+import Login from 'routes/Login';
+import * as routes from 'utils/routes';
+
 import Header from '../Header';
-import Home from '../../routes/Home';
-import Login from '../../routes/Login';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -12,8 +14,8 @@ function App() {
         <Header/>
 
         <Switch>
-          <Route path="/home" component={Home}/>
-          <Route path="/login" component={Login}/>
+          <Route path={routes.home()} component={Home}/>
+          <Route path={routes.login()} component={Login}/>
         </Switch>
       </div>
     </BrowserRouter>
